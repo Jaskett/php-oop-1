@@ -17,14 +17,19 @@
         // Definisco il metodo
         public function getHtml()
         {
-            return "Title: " . $this->title . "<br>Running Time: " . $this->runningTime . "<br>Language: " . $this->language;
+            return "<h1>Title: " . $this->title . "</h1>"
+                . "<h3>Running Time: " . $this->runningTime . "</h3>"
+                . "<h3>Language: " . $this->language . "</h3>";
         }
     }
 
     // Istanzio due oggetti `Movie` e stampo a schermo i valori delle relative proprietà:
-    $movie1 = new Movie("Django Unchained", "2h 45m", "English");
-    $movie2 = new Movie("Titanic", "3h 16m", "english");
+    $django = new Movie("Django Unchained", "2h 45m", "English");
+    $titanic = new Movie("Titanic", "3h 16m", "english");
 
-    echo $movie1->getHtml();
-    echo $movie2->getHtml();
+    $movies = [$django, $titanic];
+
+    foreach($movies as $movie) {
+        echo $movie->getHtml();
+    }
 ?>
